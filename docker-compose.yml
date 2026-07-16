@@ -2,10 +2,8 @@ services:
   api:
     build: ./apps/api
     ports: ["3001:3001"]
-    environment:
-      CONTENT_ISLAND_ACCESS_TOKEN: ${CONTENT_ISLAND_ACCESS_TOKEN}
-      CONTENT_ISLAND_READ_TOKEN: ${CONTENT_ISLAND_READ_TOKEN}
-      REFRESH_SECRET: ${REFRESH_SECRET}
+    env_file:
+      - ./apps/api/.env
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
       interval: 5s

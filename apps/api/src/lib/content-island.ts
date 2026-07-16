@@ -1,6 +1,6 @@
 import { type ContentSnapshot, createClient, exportSnapshot } from '@content-island/api-client';
 import snapshot from '../../content-island-snapshot.json' with { type: 'json' };
-import { ENV } from './env';
+import { ENV } from './env.js';
 
 const accessToken = ENV.CONTENT_ISLAND_READ_TOKEN ?? 'snapshot-mode';
 
