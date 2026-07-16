@@ -1,0 +1,5 @@
+{
+  "name": "content-island-dynamic-snapshot",
+  "private": true,
+  "workspaces": ["apps/*"]
+}
