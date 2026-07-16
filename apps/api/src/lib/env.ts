@@ -7,7 +7,6 @@ function requireEnv(name: string): string {
 }
 
 export const ENV = {
-  CONTENT_ISLAND_ACCESS_TOKEN: requireEnv('CONTENT_ISLAND_ACCESS_TOKEN'),
   CONTENT_ISLAND_READ_TOKEN: process.env.CONTENT_ISLAND_READ_TOKEN,
   REFRESH_SECRET: requireEnv('REFRESH_SECRET')
 };
