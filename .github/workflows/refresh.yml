@@ -1,0 +1,16 @@
+name: Refresh Content Island snapshot
+on:
+  repository_dispatch:
+    types: [content-refresh]
+  workflow_dispatch:
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify api to refresh snapshot
+        run: |
+          curl -fsS -X POST "$REFRESH_URL" \
+            -H "x-refresh-secret: $REFRESH_SECRET"
+        env:
+          REFRESH_URL: ${{ secrets.REFRESH_URL }}
+          REFRESH_SECRET: ${{ secrets.REFRESH_SECRET }}
